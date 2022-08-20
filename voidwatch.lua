@@ -1,6 +1,6 @@
 _addon.name     = 'voidwatch'
-_addon.author   = 'Dabidobido, Snads'
-_addon.version  = '1.0.0'
+_addon.author   = 'Mojo, Dabidobido, Snads'
+_addon.version  = '1.0.1'
 _addon.commands = {'vw'}
 
 -- copied lots of code from https://github.com/Muddshuvel/Voidwatch/blob/master/voidwatch.lua
@@ -316,7 +316,6 @@ local function start_fight()
 end
 
 local function buy_cell()
-	log('buying ' .. number_to_buy + 1  .. 'x12 cells')
 	local p = packets.new('outgoing', 0x5b, {
             ['Target'] = npc_id,
             ['Target Index'] = npc_index,
@@ -564,6 +563,7 @@ local function parse_incoming(id, data)
 					cell_unknown = nil
 				end
 				if cell_unknown then
+					log("Buying " .. buying .. " cells")
 					coroutine.schedule(buy_cell, 0.1)
 					return true
 				else
@@ -731,7 +731,8 @@ local function handle_command(...)
 			if not number_to_buy then number_to_buy = 1 end
 		end
 		buying_cobalt = true
-		for i = 1, number_to_buy do
+		local times_to_buy = math.ceil(number_to_buy / 99)
+		for i = 1, times_to_buy do
 			coroutine.schedule(poke_officer, (i-1) * 2)
 		end		
 	elseif args[1] == "br" then
@@ -741,7 +742,8 @@ local function handle_command(...)
 			if not number_to_buy then number_to_buy = 1 end
 		end
 		buying_rubicund = true
-		for i = 1, number_to_buy do
+		local times_to_buy = math.ceil(number_to_buy / 99)
+		for i = 1, times_to_buy do
 			coroutine.schedule(poke_officer, (i-1) * 2)
 		end
 	elseif args[1] == "bp" and args[2] then

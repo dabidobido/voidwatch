@@ -30,6 +30,8 @@ As of now the delay only affects opening the chest.  If multiple characters are 
 at the same time you will still get conflicts.
 
 # Version history
+1.0.1:
+- Fix buy cells spam
 
 1.0.0:
 - Merged with multibox friendly changes by Snads
