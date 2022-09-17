@@ -1,6 +1,6 @@
 _addon.name     = 'voidwatch'
 _addon.author   = 'Mojo, Dabidobido, Snads'
-_addon.version  = '1.0.1'
+_addon.version  = '1.0.2'
 _addon.commands = {'vw'}
 
 -- copied lots of code from https://github.com/Muddshuvel/Voidwatch/blob/master/voidwatch.lua
@@ -554,10 +554,10 @@ local function parse_incoming(id, data)
 				local buying = number_to_buy > 99 and 99 or number_to_buy
 				number_to_buy = number_to_buy - buying
 				if buying_cobalt then
-					if buying == 0 then buying_cobalt = false end
+					if number_to_buy == 0 then buying_cobalt = false end
 					cell_unknown = buying * 2 ^ 6 + 1
 				elseif buying_rubicund then
-					if buying == 0 then buying_rubicund = false end
+					if number_to_buy  == 0 then buying_rubicund = false end
 					cell_unknown = buying * 2 ^ 6 + 2
 				else
 					cell_unknown = nil
