@@ -889,8 +889,8 @@ local function handle_command(...)
 		end
     else
         notice('//vw t: trade cells and displacers and start fight')
-		notice('//vw bc (number): buy number * 12 cobalt cells from nearby Voidwatch Officer')
-		notice('//vw br (number): buy number * 12 rubicund cells from nearby Voidwatch Officer')
+		notice('//vw bc (number): buy number of cobalt cells from nearby Voidwatch Officer')
+		notice('//vw br (number): buy number of rubicund cells from nearby Voidwatch Officer')
 		notice('//vw bp (number): buy (number) phase displacers from Ardrick')
 		notice('//vw setp (number): set number of phase displacers to use')
 		notice('//vw setc (number): set number of cobalt cells to use')

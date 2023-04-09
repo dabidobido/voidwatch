@@ -3,8 +3,8 @@
 The commands are:
 
         //vw t: trade cells and displacers and start fight
-		//vw bc (number): buy number * 12 cobalt cells from nearby Voidwatch Officer
-		//vw br (number): buy number * 12 rubicund cells from nearby Voidwatch Officer
+		//vw bc (number): buy number of cobalt cells from nearby Voidwatch Officer
+		//vw br (number): buy number of rubicund cells from nearby Voidwatch Officer
 		//vw bp (number): buy (number) phase displacers from Ardrick
 		//vw setp (number): set number of phase displacers to use
 		//vw setc (number): set number of cobalt cells to use
@@ -30,6 +30,12 @@ As of now the delay only affects opening the chest.  If multiple characters are 
 at the same time you will still get conflicts.
 
 # Version history
+1.0.3:
+- Fix help text and readme
+
+1.0.2:
+- Fix buying cells
+
 1.0.1:
 - Fix buy cells spam
 
