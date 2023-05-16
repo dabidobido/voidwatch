@@ -1,6 +1,6 @@
 _addon.name     = 'voidwatch'
 _addon.author   = 'Mojo, Dabidobido, Snads'
-_addon.version  = '1.0.2'
+_addon.version  = '1.0.4'
 _addon.commands = {'vw'}
 
 -- copied lots of code from https://github.com/Muddshuvel/Voidwatch/blob/master/voidwatch.lua
@@ -219,6 +219,7 @@ end
 local function trade_cells()
     log('trade cells')
 	use_cleric = false
+	if not leader() then return end
     local npc = get_mob_by_name('Planar Rift')
     if npc and npc.distance <= interact_distance_square then
         local trade = packets.new('outgoing', 0x36, {
@@ -270,9 +271,7 @@ local function trade_cells()
 		end
         trade['Number of Items'] = n
         packets.inject(trade)
-		if leader() then
-			coroutine.schedule(poke_rift, 1.5)
-		end
+		coroutine.schedule(poke_rift, 1.5)
     end
 end
 

@@ -30,6 +30,9 @@ As of now the delay only affects opening the chest.  If multiple characters are 
 at the same time you will still get conflicts.
 
 # Version history
+1.0.4:
+- Only party leader should trade cells+displacers
+
 1.0.3:
 - Fix help text and readme
 
